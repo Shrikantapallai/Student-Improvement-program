@@ -1,0 +1,14 @@
+name: "student details workflow"
+
+on:
+  push:
+    branches:
+      - master
+      - studentdevelopment
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      - name : "print student details"
+        run: echo "student details"
