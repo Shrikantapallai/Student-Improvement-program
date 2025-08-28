@@ -7,7 +7,7 @@ on:
 
 job:
   on-push:
-    runs-on:ubuntu-latest
+  runs-on: ubuntu-latest
   steps:
     -name : "running on multievent"
     run: echo "Running on multievent"
