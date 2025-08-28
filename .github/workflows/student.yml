@@ -5,8 +5,6 @@ on:
     branches:
       - master
       - studentdevelopment
-  pull:
-    br
 
 jobs:
   hello_world:
