@@ -10,12 +10,14 @@ on:
       - master
 jobs:
   on-push:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name : "print multiple event"
         run: echo "print details"
 
   on-pull-request:
+    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - name: "running on pull request"
