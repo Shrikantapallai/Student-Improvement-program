@@ -1,0 +1,42 @@
+name : "multi event pipeline/workflow"
+
+on:
+  push:
+    branches:
+      - master
+      - studentdevelopment
+  pull_request:
+    branches:
+      - master
+    types:
+      - closed
+  workflow_dispatch:
+
+
+jobs:
+  on-push:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name : "print multiple event"
+        run: echo "print details"
+
+  on-pull-request:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "running on pull request"
+        run: echo "running on pull request"
+  on-pull-request-closed:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "running on pull request closed"
+        run: echo "running on pull request closed"
+
+  on-workflow_dispatch :
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "runnning on workflow dispatch"
+        run: echo "running on workflow dispatch"
