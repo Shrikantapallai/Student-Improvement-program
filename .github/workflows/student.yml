@@ -5,6 +5,8 @@ on:
     branches:
       - master
       - studentdevelopment
+  pull:
+    br
 
 jobs:
   hello_world:
@@ -12,3 +14,6 @@ jobs:
     steps:
       - name : "print student details"
         run: echo "student details"
+
+
+
